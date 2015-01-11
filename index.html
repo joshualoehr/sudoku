@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sudoku Puzzle</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="puzzles.js"></script>
+        <script src="control.js"></script>
+        <script src="solve.js"></script>
+    </head>
+    <body>
+        <h1>Sudoku Puzzle</h1>
+        <div id="header">
+            <p>Click a cell to select, and use the number keys to fill the selected
+                cell. Zero clears the cell. The numbered buttons at the bottom fill
+                the puzzle with incomplete, premade puzzles. The solve button will
+                run the solve algorithm and display the solution if it exists.</p>
+        </div>
+        <table id="sudoku">
+            <tr>
+                <td class="cell row1 col1"></td>
+                <td class="cell row1 col2"></td>
+                <td class="cell row1 col3"></td>
+                <td class="cell row1 col4"></td>
+                <td class="cell row1 col5"></td>
+                <td class="cell row1 col6"></td>
+                <td class="cell row1 col7"></td>
+                <td class="cell row1 col8"></td>
+                <td class="cell row1 col9"></td>
+            </tr>
+            <tr>
+                <td class="cell row2 col1"></td>
+                <td class="cell row2 col2"></td>
+                <td class="cell row2 col3"></td>
+                <td class="cell row2 col4"></td>
+                <td class="cell row2 col5"></td>
+                <td class="cell row2 col6"></td>
+                <td class="cell row2 col7"></td>
+                <td class="cell row2 col8"></td>
+                <td class="cell row2 col9"></td>
+            </tr>
+            <tr>
+                <td class="cell row3 col1"></td>
+                <td class="cell row3 col2"></td>
+                <td class="cell row3 col3"></td>
+                <td class="cell row3 col4"></td>
+                <td class="cell row3 col5"></td>
+                <td class="cell row3 col6"></td>
+                <td class="cell row3 col7"></td>
+                <td class="cell row3 col8"></td>
+                <td class="cell row3 col9"></td>
+            </tr>
+            <tr>
+                <td class="cell row4 col1"></td>
+                <td class="cell row4 col2"></td>
+                <td class="cell row4 col3"></td>
+                <td class="cell row4 col4"></td>
+                <td class="cell row4 col5"></td>
+                <td class="cell row4 col6"></td>
+                <td class="cell row4 col7"></td>
+                <td class="cell row4 col8"></td>
+                <td class="cell row4 col9"></td>
+            </tr>
+            <tr>
+                <td class="cell row5 col1"></td>
+                <td class="cell row5 col2"></td>
+                <td class="cell row5 col3"></td>
+                <td class="cell row5 col4"></td>
+                <td class="cell row5 col5"></td>
+                <td class="cell row5 col6"></td>
+                <td class="cell row5 col7"></td>
+                <td class="cell row5 col8"></td>
+                <td class="cell row5 col9"></td>
+            </tr>
+            <tr>
+                <td class="cell row6 col1"></td>
+                <td class="cell row6 col2"></td>
+                <td class="cell row6 col3"></td>
+                <td class="cell row6 col4"></td>
+                <td class="cell row6 col5"></td>
+                <td class="cell row6 col6"></td>
+                <td class="cell row6 col7"></td>
+                <td class="cell row6 col8"></td>
+                <td class="cell row6 col9"></td>
+            </tr>
+            <tr>
+                <td class="cell row7 col1"></td>
+                <td class="cell row7 col2"></td>
+                <td class="cell row7 col3"></td>
+                <td class="cell row7 col4"></td>
+                <td class="cell row7 col5"></td>
+                <td class="cell row7 col6"></td>
+                <td class="cell row7 col7"></td>
+                <td class="cell row7 col8"></td>
+                <td class="cell row7 col9"></td>
+            </tr>
+            <tr>
+                <td class="cell row8 col1"></td>
+                <td class="cell row8 col2"></td>
+                <td class="cell row8 col3"></td>
+                <td class="cell row8 col4"></td>
+                <td class="cell row8 col5"></td>
+                <td class="cell row8 col6"></td>
+                <td class="cell row8 col7"></td>
+                <td class="cell row8 col8"></td>
+                <td class="cell row8 col9"></td>
+            </tr>
+            <tr>
+                <td class="cell row9 col1"></td>
+                <td class="cell row9 col2"></td>
+                <td class="cell row9 col3"></td>
+                <td class="cell row9 col4"></td>
+                <td class="cell row9 col5"></td>
+                <td class="cell row9 col6"></td>
+                <td class="cell row9 col7"></td>
+                <td class="cell row9 col8"></td>
+                <td class="cell row9 col9"></td>
+            </tr>
+        </table>
+        <div id="buttons">
+            <ul>
+                <button class="puzzleButton" id="puzzle1" onclick="generatePuzzle(0)">1</button>
+                <button class="puzzleButton" id="puzzle2" onclick="generatePuzzle(1)">2</button>
+                <button class="puzzleButton" id="puzzle3" onclick="generatePuzzle(2)">3</button>
+                <button class="puzzleButton" id="puzzle4" onclick="generatePuzzle(3)">4</button>
+                <button class="puzzleButton" id="puzzle5" onclick="generatePuzzle(4)">5</button>
+            </ul>
+            <button id="solveButton" onclick="solve();">Solve</button>
+            <p id="solutionStatus"></p>
+        </div>
+    </body>
+</html>
